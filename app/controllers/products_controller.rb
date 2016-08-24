@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.unclaimed
+		@test = 'test'
   end
 
   def feed

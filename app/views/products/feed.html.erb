@@ -24,7 +24,7 @@
       </tr>
       </thead>
       <tbody>
-      <% @products.each do |product| %>
+      <% @products.each do |product|%>
           <tr>
             <td><%= image_tag product.avatar.url(:thumb), style:"height:50px" %></td>
             <td><%= product.name %></td>
@@ -48,4 +48,3 @@
     </table>
   </div><!-- /.sheet-inner -->
 </div><!-- /.sheet -->
-

@@ -8,6 +8,8 @@
     <%= button_to "Sell a New Item", new_product_path, class: "btn-sq btn-hntrs-red", method: :get %>
 <% end %>
 
+<h5><%= @test %></h5>
+
 <div class="sheet sheet-condensed">
   <div class="sheet-inner">
     <table class="table">
@@ -22,6 +24,8 @@
       </thead>
       <tbody>
       <% @products.each do |product| %>
+
+			<% if product.active == true %>
         <tr>
           <td><%= link_to (image_tag product.avatar.url(:thumb), style:"height:50px"),product %></td>
           <td><%= product.name %></td>
@@ -36,6 +40,7 @@
             <% end %>
           </td>
         </tr>
+				<% end %>
       <% end %>
       <% if @products.length == 0 %>
         <tr><td colspan=42 class='text-center'>No products.</td></tr>
@@ -44,4 +49,3 @@
     </table>
   </div><!-- /.sheet-inner -->
 </div><!-- /.sheet -->
-
